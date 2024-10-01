@@ -8,10 +8,11 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: Never
 ################################################################
 # cleanup shared /tmp before downloading content
           initContainers:
-            - name: content
+            - name: cleanup-tmp-folder
               image: alpine
               command:
                 - "/bin/sh"
